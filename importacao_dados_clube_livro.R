@@ -37,4 +37,4 @@ tibble(estudantes)
 view(estudantes)
 
 estudantes <- estudantes |>
-  janitor::clean_names()
+  janitor::clean_names() # Coloca todos os nomes de colunas separadas por "_"
