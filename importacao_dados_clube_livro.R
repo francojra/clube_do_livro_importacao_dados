@@ -97,3 +97,9 @@ read_csv(
   col_names = FALSE # Fala que os dados não tem cabeçalho, 
   # então novas variáveis são criadas nas colunas
 )
+
+read_csv(
+  "1, 2, 3
+  4, 5, 6",
+  col_names = c("C1", "C2", "C3") # Você cria os nomes das colunas
+)
