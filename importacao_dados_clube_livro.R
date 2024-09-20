@@ -28,4 +28,9 @@ getwd() # Para verificar o diretório
 setwd() # Para especificar seu diretório, onde estão seus arquivos
 
 cardio <- read.csv2("cardio_train.csv")
+tibble(cardio)
 view(cardio)
+
+estudantes <- read.csv("estudantes.csv", na = c("N/A", "", "NA"))
+tibble(estudantes)
+view(estudantes)
