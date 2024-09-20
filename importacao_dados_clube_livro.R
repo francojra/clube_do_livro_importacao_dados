@@ -143,3 +143,22 @@ df
 
 problems(df) # Relata o problema de uma das linhas ser caracter e não numérico.
 # O read_csv converte o caracter em um NA
+
+read_csv(simple_csv, na = ".")
+
+outro_csv <- "
+x,y,z
+1,2,3"
+
+read_csv(
+  outro_csv, 
+  col_types = cols(.default = col_character()) # Estabelece caracter como
+  # padrão para as colunas
+)
+
+read_csv(
+  outro_csv,
+  col_types = cols_only(x = col_character())) # Usado para especificar qual coluna
+  # estabelecer como um caracter
+  
+  
