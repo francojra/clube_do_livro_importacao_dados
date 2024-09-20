@@ -133,3 +133,13 @@ simple_csv <- "
 
 read_csv(simple_csv) # Se nos dados tem uma palavra ou ponto/símbolo
 # o read_csv interpretará como uma coluna de caracteres.
+
+df <- read_csv(
+  simple_csv, 
+  col_types = list(x = col_double()) # Pede para que a coluna x seja numérica dbl
+)
+
+df
+
+problems(df) # Relata o problema de uma das linhas ser caracter e não numérico.
+# O read_csv converte o caracter em um NA
