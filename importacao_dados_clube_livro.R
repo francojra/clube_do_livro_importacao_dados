@@ -26,7 +26,8 @@ read_csv2()
 ## de trabalho
 
 getwd() # Para verificar o diretório
-setwd() # Para especificar seu diretório, onde estão seus arquivos
+setwd() # Para especificar seu diretório, onde estão seus arquivos,
+## O endereço deve ser colocado entre aspas com barras invertidas
 
 cardio <- read.csv2("cardio_train.csv")
 tibble(cardio)
@@ -103,3 +104,32 @@ read_csv(
   4, 5, 6",
   col_names = c("C1", "C2", "C3") # Você cria os nomes das colunas
 )
+
+# Adivinhando tipos ------------------------------------------------------------------------------------------------------------------------
+
+## O pacote readr usa uma heurística para descobrir os tipos de coluna. 
+## Para cada coluna, ele pega os valores de 1.0003 linhas espaçadas 
+## uniformemente da primeira à última, ignorando os valores ausentes. 
+## Ele então trabalha através das seguintes perguntas:
+
+## Contém apenas F, T, FALSE ou TRUE (ignorando a caixa alta)? Se sim, é um lógico.
+## Contém apenas números (por exemplo, 1, -4.5, 5e6, Inf)? Se sim, é um número.
+## Corresponde ao padrão ISO8601? Se sim, é uma data ou data-hora. (Voltaremos às data-horas em mais detalhes em Seção 17.2).
+## Caso contrário, deve ser uma string.
+
+read_csv("
+  logico,numerico,data,string
+  TRUE,1,2021-01-15,abc
+  false,4.5,2021-02-15,def
+  T,Inf,2021-02-16,ghi
+")
+
+simple_csv <- "
+  x
+  10
+  .
+  20
+  30"
+
+read_csv(simple_csv) # Se nos dados tem uma palavra ou ponto/símbolo
+# o read_csv interpretará como uma coluna de caracteres.
