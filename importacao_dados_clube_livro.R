@@ -39,3 +39,23 @@ view(estudantes)
 estudantes <- estudantes |>
   janitor::clean_names() # Coloca todos os nomes de colunas separadas por "_"
 view(estudantes)
+
+## Importante sempre verificar os tipos de variáveis: numéricas dbl,
+## categóricas (factor), numéricas inteiras, etc. para que os gráficos
+## sejam adequados para cada variável.
+
+## Na tabela estudante, a variável idade apresenta números e também
+## um caracter "cinco" em vez de 5.
+
+estudantes <- estudantes |>
+  mutate(plano_alimentar =  as.factor(plano_alimentar),
+         comida_favorita = as.factor(comida_favorita),
+         idade = parse_number(if_else(idade == "cinco", 
+                                      "5", idade)))
+glimpse(estudantes)
+
+## A função parse_number pega apenas os números de uma variável
+## e transforma essa variável em numérica, no caso da tabela,
+## uma das linhas apresentava apenas um caracter, então foi
+## necessário usar o if_else antes de usar o parse_number.
+
