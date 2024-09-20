@@ -9,3 +9,9 @@
 
 library(tidyverse)
 
+# Lendo dados de um arquivo ----------------------------------------------------------------------------------------------------------------
+
+## csv = comma-separated values -- Colunas separadas por vírgula
+## e valores separados por ponto.
+## No Brasil, usamos o csv2, onde as colunas são separadas por ponto
+## e vírgula e os valores separados por vírgula.
