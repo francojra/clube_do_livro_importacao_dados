@@ -38,3 +38,4 @@ view(estudantes)
 
 estudantes <- estudantes |>
   janitor::clean_names() # Coloca todos os nomes de colunas separadas por "_"
+view(estudantes)
