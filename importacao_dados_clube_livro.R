@@ -59,3 +59,26 @@ glimpse(estudantes)
 ## uma das linhas apresentava apenas um caracter, então foi
 ## necessário usar o if_else antes de usar o parse_number.
 
+# Criando tabelas e explorando argumentos --------------------------------------------------------------------------------------------------
+
+read_csv(
+  "x, y, z
+  1, 2, 3
+  4, 5, 6"
+)
+
+read_csv(
+  "x, y, z
+  1, 2, 3
+  4, 5, 6",
+  show_col_types = FALSE # Para omitir mensagens
+)
+
+read_csv(
+  "Primeira linha de metadados
+  Segunda linha metadados
+  x, y, z
+  1, 2, 3
+  4, 5, 6",
+  skip = 2 # Retira as duas primeiras linhas
+)
