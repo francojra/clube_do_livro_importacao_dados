@@ -8,6 +8,7 @@
 # Baixar pacote ----------------------------------------------------------------------------------------------------------------------------
 
 library(tidyverse)
+library(janitor)
 
 # Lendo dados de um arquivo ----------------------------------------------------------------------------------------------------------------
 
@@ -34,3 +35,6 @@ view(cardio)
 estudantes <- read.csv("estudantes.csv", na = c("N/A", "", "NA"))
 tibble(estudantes)
 view(estudantes)
+
+estudantes <- estudantes |>
+  janitor::clean_names()
