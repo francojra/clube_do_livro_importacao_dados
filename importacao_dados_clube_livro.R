@@ -82,3 +82,18 @@ read_csv(
   4, 5, 6",
   skip = 2 # Retira as duas primeiras linhas
 )
+
+read_csv(
+  "# Aqui é um comentário
+  x, y, z
+  1, 2, 3
+  4, 5, 6",
+  comment = "#" # Indica que tudo que tem o "#" é comentário
+)
+
+read_csv(
+  "1, 2, 3
+  4, 5, 6",
+  col_names = FALSE # Fala que os dados não tem cabeçalho, 
+  # então novas variáveis são criadas nas colunas
+)
