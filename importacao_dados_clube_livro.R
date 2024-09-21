@@ -179,12 +179,13 @@ view(read_csv(arquivos_vendas, id = "arquivo")) # Cria uma nova coluna "arquivo"
 # Os argumentos mais importantes para essas funções são x (o data frame a ser salvo) 
 # e file (o local para salvá-lo).
 
-write_csv(estudantes, "estudantes.csv")
+write_csv(estudantes, "estudantes.csv") # Salva na pasta do seu diretório
 read_csv("estudantes.csv") # As configurações dos tipos de variáveis são perdidas devido
 # você estar começando com a leitura de arquivo de texto simples
 # após salvar o csv
 
 ## Para resolver isso podemos usar o write_rds
+## Permite não perder nada do que corrigiu durante a limpeza dos dados
 
 write_rds(estudantes, "estudantes.rds")
 read_rds("estudantes.rds")
