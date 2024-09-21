@@ -170,3 +170,5 @@ arquivos_vendas <- c(
 )
 
 view(read_csv(arquivos_vendas, id = "arquivo")) # Cria uma nova coluna "arquivo" indicando qual o arquivo
+
+
