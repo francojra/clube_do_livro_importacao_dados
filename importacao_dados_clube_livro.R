@@ -51,8 +51,8 @@ view(estudantes)
 estudantes <- estudantes |>
   mutate(plano_alimentar =  as.factor(plano_alimentar),
          comida_favorita = as.factor(comida_favorita),
-         idade = parse_number(if_else(idade == "cinco", 
-                                      "5", idade)))
+         idade = if_else(idade == "cinco", 
+                                      "5", idade))
 glimpse(estudantes)
 
 ## A função parse_number pega apenas os números de uma variável
@@ -180,6 +180,12 @@ view(read_csv(arquivos_vendas, id = "arquivo")) # Cria uma nova coluna "arquivo"
 # e file (o local para salvá-lo).
 
 write_csv(estudantes, "estudantes.csv")
-read_csv("estudantes.csv") # As configurações dos tipos de variáveis são perdidos devido
-# você está começando a com a leitura de arquivo de texto simples
+read_csv("estudantes.csv") # As configurações dos tipos de variáveis são perdidas devido
+# você estar começando com a leitura de arquivo de texto simples
 # após salvar o csv
+
+## Para resolver isso podemos usar o write_rds
+
+write_rds(estudantes, "estudantes.rds")
+read_rds("estudantes.rds")
+tibble(estudantes)
