@@ -171,4 +171,15 @@ arquivos_vendas <- c(
 
 view(read_csv(arquivos_vendas, id = "arquivo")) # Cria uma nova coluna "arquivo" indicando qual o arquivo
 
+# Exportando para um arquivo ---------------------------------------------------------------------------------------------------------------
 
+# O pacote readr também vem com duas funções úteis para escrever dados 
+# de volta para o disco: write_csv() e write_tsv(). 
+
+# Os argumentos mais importantes para essas funções são x (o data frame a ser salvo) 
+# e file (o local para salvá-lo).
+
+write_csv(estudantes, "estudantes.csv")
+read_csv("estudantes.csv") # As configurações dos tipos de variáveis são perdidos devido
+# você está começando a com a leitura de arquivo de texto simples
+# após salvar o csv
