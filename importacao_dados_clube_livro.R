@@ -161,4 +161,12 @@ read_csv(
   col_types = cols_only(x = col_character())) # Usado para especificar qual coluna
   # estabelecer como um caracter
   
-  
+# Importando dados de múltiplos arquivos ---------------------------------------------------------------------------------------------------
+
+arquivos_vendas <- c(
+  "https://raw.githubusercontent.com/cienciadedatos/pt-r4ds/traducao-pt-2ed/data/01-vendas.csv",
+  "https://raw.githubusercontent.com/cienciadedatos/pt-r4ds/traducao-pt-2ed/data/02-vendas.csv",
+  "https://raw.githubusercontent.com/cienciadedatos/pt-r4ds/traducao-pt-2ed/data/03-vendas.csv"
+)
+
+view(read_csv(arquivos_vendas, id = "arquivo")) # Cria uma nova coluna "arquivo" indicando qual o arquivo
