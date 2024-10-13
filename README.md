@@ -4,7 +4,7 @@
 ### Data: 19/09/24
 ### Palestrante: Cecília Rocha
 
-#### Tópicos do script
+#### Tópicos do script:
 
 1. Baixar pacotes;
 2. Lendo dados de um arquivo;
