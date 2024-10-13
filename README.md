@@ -1,2 +1,7 @@
-# clube_do_livro_importacao_dados
-Seção do Clube do Livro sobre importação de dados no R. O Clube do Livro é organizado pela comunidade R-Ladies São Paulo.
+# R-Ladies São Paulo
+# Clube do Livro R for Data Science (2ed)
+# Encontro 9: Importação de dados (pacotes tidyverse/readr)
+# Data: 19/09/24
+# Palestrante: Cecília Rocha
+
+## Tópicos do script
